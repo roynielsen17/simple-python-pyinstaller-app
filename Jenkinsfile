@@ -73,7 +73,7 @@ pipeline {
             }
         }
         stage('post-parallel') {
-            steps{
+            steps {
                 echo 'Running post-parallel stage'
             }
         }
