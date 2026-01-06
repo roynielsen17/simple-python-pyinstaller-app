@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                bash '/usr/bin/python3 -m py_compile sources/add2vals.py sources/calc.py' 
+                sh '/usr/bin/python3 -m py_compile sources/add2vals.py sources/calc.py' 
                 stash(name: 'compiled-results', includes: 'sources/*.py*') 
             }
         }
         stage('Test') { 
             steps {
-                bash 'py.test --junit-xml test-reports/results.xml sources/test_calc.py' 
+                sh '/Users/jenkins/Library/Python/3.9/bin/py.test --junit-xml test-reports/results.xml sources/test_calc.py' 
             }
             post {
                 always {
