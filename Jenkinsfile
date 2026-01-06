@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Deliver') { 
             steps {
-                sh "pyinstaller --onefile sources/add2vals.py" 
+                sh "/Users/jenkins/Library/Python/3.9/bin/pyinstaller --onefile sources/add2vals.py" 
             }
             post {
                 success {
