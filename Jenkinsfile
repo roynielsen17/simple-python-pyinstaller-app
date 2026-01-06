@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Parallel Pipelines') {
             parallel {
-                stage('macOS Pipeline') {
+                stages('macOS Pipeline') {
                     agent { label 'macos'}
                     stage('Build') { 
                         steps {
@@ -37,7 +37,7 @@ pipeline {
                         }
                     }
                 }
-                stage('Debian Pipeline') {
+                stages('Debian Pipeline') {
                     agent { label 'debian' }
                     stage('Build') { 
                         steps {
