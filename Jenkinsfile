@@ -50,7 +50,7 @@ pipeline {
                         }
                         stage('Test') { 
                             steps {
-                                sh '/Users/jenkins/Library/Python/3.9/bin/py.test --junit-xml test-reports/results.xml sources/test_calc.py' 
+                                sh '/usr/bin/py.test --junit-xml test-reports/results.xml sources/test_calc.py' 
                             }
                             post {
                                 always {
@@ -60,7 +60,7 @@ pipeline {
                         }
                         stage('Deliver') { 
                             steps {
-                                sh "/Users/jenkins/Library/Python/3.9/bin/pyinstaller --onefile sources/add2vals.py" 
+                                sh "/usr/bin/pyinstaller --onefile sources/add2vals.py" 
                             }
                             post {
                                 success {
